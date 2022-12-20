@@ -45,14 +45,14 @@ function App() {
           onChange={handleChange}
         />
         <input
-          type="text"
+          type="password"
           name="password"
           placeholder="Password"
           value={formData.lastName}
           onChange={handleChange}
         />
         <input
-          type="text"
+          type="password"
           name="confirm_password"
           placeholder="Confirm password"
           value={formData.lastName}
