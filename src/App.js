@@ -2,19 +2,43 @@ import './App.css';
 import React from 'react';
 
 function App() {
-  const [firstName, setFirstName] = React.useState("");
-  const [lastName, setLastName] = React.useState("");
+  const [formData, setFormData] = React.useState({firstName:"", lastName:"", email: ""});
+
+  console.log(formData);
 
   function handleChange (event) {
-    event.target.name === 'first_name' ? setFirstName(event.target.value) : setLastName(event.target.value);
-    console.log(event.target.value);
+    setFormData((prefFormData) => {
+      var newFormData = {...prefFormData};
+      newFormData[event.target.name] = event.target.value;
+
+      return newFormData;
+    });
   }
 
   return (
     <div className="App">
       <form>
-        <input type="text" name="first_name" placeholder='First name' onChange={handleChange} />
-        <input type="text" name="last_name" placeholder='Last name' onChange={handleChange} />
+        <input 
+          type="text"
+          name="firstName"
+          placeholder="First name"
+          value={formData.firstName}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last name"
+          value={formData.lastName}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="email"
+          placeholder="Email"
+          value={formData.email}
+          onChange={handleChange}
+        />
       </form>
     </div>
   );
