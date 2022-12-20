@@ -7,7 +7,9 @@ function App() {
     lastName:"",
     email: "",
     comment: "",
-    check: false
+    check: false,
+    employment: "",
+    color: ""
   });
 
   console.log(formData);
@@ -57,10 +59,50 @@ function App() {
           checked={formData.check}
           name="check"
           id="check"
-          class="d-inline"
+          className="d-inline"
           onChange={handleChange}
         />
         <label htmlFor="check">Check</label>
+        <fieldset>
+          <input
+            type="radio"
+            name="employment"
+            value="full-time"
+            id="full-time-employment"
+            checked={formData.employment === "full-time"}
+            onChange={handleChange}
+            />
+          <label htmlFor="full-time-employment">Full-time</label>
+          <br />
+          <input
+            type="radio"
+            name="employment"
+            value="part-time"
+            id="part-time-employment"
+            checked={formData.employment === "part-time"}
+            onChange={handleChange}
+            />
+          <label htmlFor="part-time-employment">Part-time</label>
+          <br />
+          <input
+            type="radio"
+            name="employment"
+            value="unemployed"
+            id="unemployed-employment"
+            checked={formData.employment === "unemployed"}
+            onChange={handleChange}
+            />
+          <label htmlFor="unemployed-employment">Unemployed</label>
+        </fieldset>
+        <select
+          name="color"
+          value={formData.color}
+          onChange={handleChange}
+        >
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+        </select>
       </form>
     </div>
   );
