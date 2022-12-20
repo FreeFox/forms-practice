@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+
+form > input, form > textarea {
+  display: block;
+  margin: 3px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.d-inline {
+  display: inline-block;
+}
